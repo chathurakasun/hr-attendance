@@ -5,7 +5,7 @@ import { useAuthContext } from "../context/auth-context";
 
 const Dashboard = () => {
   const { userName, today, userEmail } = useAuthContext();
-  console.log(userName);
+
   return (
     <div className="mt-12  bg-gray-100 h-screen">
       {/* detail box */}

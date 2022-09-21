@@ -18,12 +18,9 @@ const initialAttState = {
 //----------------------------------------
 export const AttContextProvider = ({ children }) => {
   const { userEmail } = useAuthContext();
-
   const [att, setAtt] = useState(initialAttState); // to store POST att
   const [controlAtt, setControAtt] = useState([]); // this is for prevent duplicate IN/OUT
-
   const [calendarAtt, setCalendarAtt] = useState({}); // to display selected one daye details
-
   const [inquiry, setInquiry] = useState([]);
 
   //---------------------------------------------------
@@ -42,7 +39,6 @@ export const AttContextProvider = ({ children }) => {
     }
 
     setCalendarAtt(getAtt); // replace everytime
-    console.log(getAtt);
   };
 
   //attendance IN and OUT actions
@@ -51,8 +47,6 @@ export const AttContextProvider = ({ children }) => {
     const inTimestamp = Date.now();
     const { today, yymm } = dateHandler(inTimestamp);
     att.inT = inTimestamp;
-
-    console.log(att);
 
     const user = extractUserName(userEmail);
     controlAttHandler("x");
@@ -83,7 +77,6 @@ export const AttContextProvider = ({ children }) => {
 
     const user = extractUserName(userEmail);
 
-    console.log(att);
     controlAttHandler("y");
 
     //fetch
@@ -99,36 +92,16 @@ export const AttContextProvider = ({ children }) => {
       successPostAtt
     );
   };
-  //-----------------------------------------------------------------------------------------------------------
-  const setSubmitTimeHandler = () => {
-    console.log("SUBMIT");
-
-    console.log(att);
-    console.log(controlAtt);
-  };
 
   //--------------------control att---------------------------------------------------------------------
   const controlAttHandler = (value) => {
     controlAtt.push(value);
-    console.log(controlAtt);
-  };
-
-  /////////////////RESET////////////////////
-  const resetHandler = () => {
-    att.length = 0;
-    controlAtt.length = 0;
-    console.log(att);
-    console.log(controlAtt);
   };
 
   //////////////////Calender data Rendering /////////////////////////////////////////////
 
   const calendarSelectHandler = (e) => {
-    console.log("calendarSelectHandler>>>");
-    console.log(e.target.value);
-
     const [yy, mm, dd] = e.target.value.split("-");
-    console.log(yy, mm, dd);
     const user = extractUserName(userEmail);
 
     // fetch to get att data from server to display
@@ -141,7 +114,6 @@ export const AttContextProvider = ({ children }) => {
   };
 
   const inquiryHandler = () => {
-    console.log("Inquiry", document.getElementById("inquiry").value);
     let inq = document.getElementById("inquiry").value;
 
     inquiry.push(inq);
@@ -158,8 +130,6 @@ export const AttContextProvider = ({ children }) => {
         setAtt,
         setInTimeHandler,
         setOutTimeHandler,
-        setSubmitTimeHandler,
-        resetHandler,
         controlAttHandler,
         setControAtt,
         calendarSelectHandler,
@@ -177,7 +147,7 @@ export const useAttContext = () => useContext(AttContext);
 //---------------HELPERS---------------------
 export const dateHandler = (timestamp) => {
   const date = new Date(timestamp + -0 * 24 * 60 * 60 * 1000); // manual day changing
-  console.log(date);
+
   const yy = String(date.getFullYear());
   const mm = String(date.getMonth() + 1).padStart(2, "0");
   const dd = String(date.getDate()).padStart(2, "0");
@@ -200,8 +170,6 @@ export const extractHrMin = (outStamp, inStamp) => {
     .split(".");
 
   const mins = String(minlong.slice(0, 2) * 0.6).padStart(2, "0");
-
-  console.log(minlong, mins);
 
   return { hr, mins };
 };

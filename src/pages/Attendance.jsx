@@ -12,8 +12,6 @@ const Attendance = () => {
   const {
     setInTimeHandler,
     setOutTimeHandler,
-    setSubmitTimeHandler,
-    resetHandler,
     calendarSelectHandler,
     calendarAtt,
     inquiryHandler,
