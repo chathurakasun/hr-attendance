@@ -94,7 +94,7 @@ const Signup = () => {
     <>
       <Header category="" title="Register" />
       <div title="container 1" className="flex justify-center flex-wrap">
-        <div className="m-2 p-2 md:m-10 md:p-10 bg-slate-300 rounded-3xl">
+        <div className="m-2 p-2 md:m-10 md:p-10 bg-emerald-200 rounded-3xl">
           <form onSubmit={formSubmitHandler}>
             {/* email */}
             <div className="p-3">
@@ -157,7 +157,7 @@ const Signup = () => {
             <div className="p-3">
               <button
                 disabled={!formIsValid}
-                className="w-32 h-10 bg-blue-700 rounded-2xl text-white cursor-pointer mb-3 mt-1 disabled:cursor-not-allowed disabled:bg-slate-500"
+                className="w-32 h-10 bg-emerald-700 rounded-2xl text-white cursor-pointer mb-3 mt-1 disabled:cursor-not-allowed disabled:bg-slate-500"
               >
                 Signup
               </button>

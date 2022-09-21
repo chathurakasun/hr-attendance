@@ -33,15 +33,18 @@ const Attendance = () => {
   return (
     <>
       <Header category="" title="Attendance" className="mt-5" />
-      <div title="container 1" className="flex justify-center flex-wrap">
+      <div
+        title="container 1"
+        className="flex justify-center flex-wrap bg-gray-100 "
+      >
         {/* Mark Attendance left */}
-        <div className="m-2 p-2 md:m-10 md:p-10 bg-slate-300 rounded-3xl ">
+        <div className="m-2 p-2 md:m-10 md:p-10 bg-white rounded-3xl h-72 ">
           <div>
             <p className="text-xl font-semibold">Mark Your Attendance</p>
           </div>
           <div
             className="flex justify-center
-           gap-5  mt-5  border-b-2 border-blue-300 border-color"
+           gap-5  mt-5  border-b-2  border-color"
           >
             <div className="mt-3 mb-5">
               <button
@@ -50,7 +53,7 @@ const Attendance = () => {
                 style={{
                   borderRadius: "10px",
                   color: "white",
-                  backgroundColor: "blue",
+                  backgroundColor: "rgb(4 120 87)",
                 }}
               >
                 IN
@@ -63,24 +66,20 @@ const Attendance = () => {
                 style={{
                   borderRadius: "10px",
                   color: "white",
-                  backgroundColor: "blue",
+                  backgroundColor: "rgb(4 120 87)",
                 }}
               >
                 OUT
               </button>
             </div>
           </div>
-          <p className="text-xs  font-semibold rounded-lg w-24 bg-orange-400 py-0.5 px-2 text-black mt-5">
+          <p className="m-5 p-3 text-xs text-center font-semibold rounded-lg  bg-stone-400	 text-black ">
             {today.yy} : {today.mm} : {today.dd}
           </p>
-
-          <div className="flex gap-4 border-b-1 border-color mt-6"></div>
-
-          <button onClick={resetHandler}>reset ATT</button>
         </div>
 
         {/* calendar one day details  right */}
-        <div className="m-2 p-4 md:m-10 md:p-10 bg-slate-100 rounded-3xl">
+        <div className="m-2 p-4 md:m-10 md:p-10 bg-white rounded-3xl">
           <div>
             <p className=" w-80 font-semibold">Check your Attendance</p>
           </div>
@@ -90,11 +89,11 @@ const Attendance = () => {
           </div>
           <div className="flex mt-5 justify-around">
             <p>In time </p>{" "}
-            <p className="border-1 bg-blue-100 w-56 rounded-xl">{int}</p>
+            <p className="border-1 bg-emerald-50 w-56 rounded-xl">{int}</p>
           </div>
           <div className="flex mt-1 justify-around">
             <p>Out time </p>{" "}
-            <p className="border-1 bg-blue-100 w-56 rounded-xl">{out}</p>
+            <p className="border-1 bg-emerald-50 w-56 rounded-xl">{out}</p>
           </div>
           <div className="flex mt-5 gap-2">
             <p>Work Duration </p>{" "}
@@ -114,7 +113,7 @@ const Attendance = () => {
             />
             {!calendarAtt.inT && (
               <button
-                className="border-2 bg-blue-500 rounded-xl p-1 text-sm"
+                className="border-2 bg-emerald-400 rounded-xl p-1 text-sm"
                 onClick={inquiryHandler}
               >
                 Submit Inquiry

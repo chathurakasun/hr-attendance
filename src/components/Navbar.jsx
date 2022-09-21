@@ -24,7 +24,7 @@ const Navbar = () => {
         <button
           type="button"
           onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
-          style={{ color: "blue" }}
+          style={{ color: "rgb(5 150 105)" }}
           className="relative text-xl rounded-full p-3 hover:bg-light-gray "
         >
           <span className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2" />
@@ -37,7 +37,7 @@ const Navbar = () => {
         {/* notification */}
         <>
           <button
-            style={{ color: "blue" }}
+            style={{ color: "rgb(5 150 105)" }}
             className="relative text-xl rounded-full p-3 hover:bg-light-gray"
           >
             <RiNotification3Line />
@@ -48,7 +48,7 @@ const Navbar = () => {
         {!isLoggedIn && (
           <>
             <Link to="/signin">
-              <button className="border-blue-200 bg-blue-500 rounded-xl p-2 mt-1 text-sm">
+              <button className="border-emerald-600 bg-emerald-300 rounded-xl p-2 mt-1 text-sm">
                 Sign IN
               </button>
             </Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
           <>
             <Link to="/">
               <button
-                className="border-1 border-orange-500 rounded-xl p-2 mt-1 text-sm"
+                className="border-1 border-emerald-600 rounded-xl p-2 mt-1 text-sm"
                 onClick={logoutHandler}
               >
                 <CgLogOff />
@@ -105,4 +105,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

@@ -22,7 +22,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div className="flex relative dark:bg-main-dark-bg">
+      <div className="flex relative ">
         {/* Left Side bar for menu */}
         {activeMenu ? (
           <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
